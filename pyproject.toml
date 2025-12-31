@@ -1,0 +1,31 @@
+[project]
+name = "bookstore"
+version = "0.1.0"
+description = "bookstore API"
+authors = [
+    {name = "Matheus-C-Machado",email = "matheusmonster08@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django (>=5.2.5,<6.0.0)",
+    "djangorestframework (>=3.16.1,<4.0.0)",
+    "django-rest-framework (>=0.1.0,<0.2.0)",
+    "django-extensions (>=4.1,<5.0)",
+    "psycopg2-binary (>=2.9.11,<3.0.0)",
+    "django-debug-toolbar (>=6.1.0,<7.0.0)"
+]
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+factory-boy = "^3.3.3"
+pytest-django = "^4.11.1"
+flake8 = "^7.3.0"
+importlib-metadata = "^8.7.0"
+django-debug-toolbar = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
