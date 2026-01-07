@@ -1,18 +1,44 @@
+# Nome do workflow (aparece na aba Actions do GitHub)
 name: GitHub Actions Demo
+
+# Nome da execução (run), pode usar variáveis do GitHub
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+# Evento que dispara o workflow
+# Aqui: toda vez que houver um push
 on: [push]
+
 jobs:
+  # Nome do job (você escolhe)
   Explore-GitHub-Actions:
+
+    # Sistema operacional da máquina que o GitHub vai usar
     runs-on: ubuntu-latest
+
     steps:
+      # Executa um comando no terminal da máquina virtual
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      # Mostra o sistema operacional do runner
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+
+      # Exibe a branch e o repositório atual
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      # Step nomeado que faz o checkout do código do repositório
       - name: Check out repository code
         uses: actions/checkout@v5
+
+      # Confirma que o repositório foi clonado
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+
+      # Indica que o ambiente está pronto para testes
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+
+      # Lista os arquivos do repositório no runner
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+
+      # Mostra o status final do job
       - run: echo "🍏 This job's status is ${{ job.status }}."
